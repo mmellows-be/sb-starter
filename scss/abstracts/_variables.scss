@@ -1,0 +1,49 @@
+//* Colours
+$error-100: #dc3545;
+$error-60: #ea858f;
+$error-20: #f8d6da;
+$warning-100: #ffc107;
+$warning-60: #ffda6a;
+$warning-20: #fff3cd;
+$success-100: #28a745;
+$success-60: #7eca8f;
+$success-20: #d4edda;
+
+$colors: (
+    'error-100': $error-100,
+    'error-60': $error-60,
+    'error-20': $error-20,
+    'warning-100': $warning-100,
+    'warning-60': $warning-60,
+    'warning-20': $warning-20,
+    'success-100': $success-100,
+    'success-60': $success-60,
+    'success-20': $success-20,
+);
+
+//* Grid breakpoints
+$grid-breakpoints: (
+    xs: 0,
+    sm: 575px,
+    md: 767px,
+    lg: 991px,
+    xl: 1199px,
+    xxl: 1399px,
+);
+
+//* Typography
+//* Font Weights
+$regular: 400;
+$medium: 500;
+$bold: 700;
+
+//* Headings
+%h1 {
+    //* H1 styles
+    font-size: 16px;
+}
+
+%body {
+    //* Body styles
+    font-size: 16px;
+}

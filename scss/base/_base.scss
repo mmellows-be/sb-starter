@@ -1,0 +1,80 @@
+//* Base file for SoBold Starter Theme
+html {
+    font-size: 62.5%;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+}
+
+body {
+    @extend %body;
+
+    &.using-mouse :focus {
+        outline: none;
+    }
+
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    p {
+        margin: 0;
+    }
+}
+
+.grecaptcha-badge {
+    display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+    margin: 0;
+}
+
+//* Colors
+@each $key, $color in $colors {
+    .#{$key} {
+        color: $color;
+    }
+
+    .bg-#{$key} {
+        background-color: $color;
+    }
+}
+
+//* Typography
+h1,
+.h1 {
+    @extend %h1;
+}
+
+//* Font Weights
+.regular {
+    font-weight: $regular;
+}
+
+.medium {
+    font-weight: $medium;
+}
+
+.bold {
+    font-weight: $bold;
+}
+
+//* Lists
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+sup {
+    font-size: 60%;
+    margin-right: 0.5rem;
+}
