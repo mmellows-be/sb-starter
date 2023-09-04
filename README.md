@@ -4,6 +4,7 @@ Welcome to SoBold's Starter Theme! This README will guide you through the struct
 
 ## Theme Structure
 
+- **assets**: Contains assets like icons, fonts ecc.
 - **css**: Contains the compiled `main.css` file for styling.
 - **elements**: Divided into subdirectories:
   - **components**: Holds non-ACF components.
@@ -102,6 +103,11 @@ Page files will be named like the page/context they're styling (e.g. `_404.scss`
 
 - Common template parts can be found in `template-parts`.
 - Use these template parts in your hierarchy files.
+
+### Assets
+
+The `assets` folder is where you can manage various assets like fonts and icons.
+Organizing your assets in a structured manner can help improve the maintainability of your theme.
 
 ## Design Patterns
 
