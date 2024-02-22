@@ -23,9 +23,9 @@ if (! function_exists('_s_setup')) {
          * Make theme available for translation.
          * Translations can be filed in the /languages/ directory.
          * If you're building a theme based on _s, use a find and replace
-         * to change '_s' to the name of your theme in all the template files.
+         * to change 'sobold' to the name of your theme in all the template files.
          */
-        load_theme_textdomain('_s', get_template_directory() . '/languages');
+        load_theme_textdomain('sobold', get_template_directory() . '/languages');
 
         // Add default posts and comments RSS feed links to head.
         add_theme_support('automatic-feed-links');
@@ -47,11 +47,11 @@ if (! function_exists('_s_setup')) {
 
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus([
-            'menu-1'               => esc_html__('Primary', '_s'),
-            'footer-main-menu'     => esc_html__('Footer Main Menu', '_s'),
-            'footer-markets-menu'  => esc_html__('Footer Markets Menu', '_s'),
-            'footer-services-menu' => esc_html__('Footer Services Menu', '_s'),
-            'legal'                => esc_html__('Legal', '_s'),
+            'menu-1'               => esc_html__('Primary', 'sobold'),
+            'footer-main-menu'     => esc_html__('Footer Main Menu', 'sobold'),
+            'footer-markets-menu'  => esc_html__('Footer Markets Menu', 'sobold'),
+            'footer-services-menu' => esc_html__('Footer Services Menu', 'sobold'),
+            'legal'                => esc_html__('Legal', 'sobold'),
         ]);
 
         /*
@@ -119,18 +119,18 @@ add_action('after_setup_theme', '_s_content_width', 0);
 function _s_widgets_init()
 {
     register_sidebar([
-        'name'          => esc_html__('Sidebar', '_s'),
+        'name'          => esc_html__('Sidebar', 'sobold'),
         'id'            => 'sidebar-1',
-        'description'   => esc_html__('Add widgets here.', '_s'),
+        'description'   => esc_html__('Add widgets here.', 'sobold'),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
         'after_widget'  => '</section>',
         'before_title'  => '<h2 class="widget-title">',
         'after_title'   => '</h2>',
     ]);
     register_sidebar([
-        'name'          => esc_html__('Sidebar Two', '_s'),
+        'name'          => esc_html__('Sidebar Two', 'sobold'),
         'id'            => 'sidebar-2',
-        'description'   => esc_html__('Add widgets here.', '_s'),
+        'description'   => esc_html__('Add widgets here.', 'sobold'),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
         'after_widget'  => '</section>',
         'before_title'  => '<h2 class="widget-title">',
@@ -156,6 +156,18 @@ function _s_scripts()
     }
 }
 add_action('wp_enqueue_scripts', '_s_scripts');
+
+//* Remove jQuery Migrate
+add_action('wp_default_scripts', 'removeJQueryMigrate');
+function removeJQueryMigrate($scripts)
+{
+    if (!is_admin() && isset($scripts->registered['jquery'])) {
+        $script = $scripts->registered['jquery'];
+        if ($script->deps) {
+            $script->deps = array_diff($script->deps, ['jquery-migrate']);
+        }
+    }
+}
 
 /**
  * Implement the Custom Header feature.
