@@ -66,6 +66,19 @@ Imports for this folder are directly added to `main.scss`
 This subfolder hosts `_base.scss`. This file holds all the base styles for a given project.
 More files can be added here to extend the base styling, each file should output a set of styles that are global and used across the site (e.g. Animations)
 
+#### Grid
+`scss/base/` contains `_grid.scss`. This file holds the css variable declarations responsible for the grid system. Modyfying these variables will allow to modify the global grid specs.
+The file uses rem on a `font-size: 62.5%` base, so `1rem` equals `10px`.\
+This file includes:
+- Container variables:
+  - `--bs-gutter-x`: container's x gutter.
+  - `--bs-gutter-y`: container's y gutter.
+- Row variables:
+  - `--bs-gutter-x`: rows's x gutter, affects columns.
+  - `--bs-gutter-y`: rows's y gutter, affects columns.
+
+As Bootstrap development's progresses, new variables might be used in this file to extend it's functionality.
+
 #### Components
 
 This subfolder contains `_index.scss` with imports from each component folder.
