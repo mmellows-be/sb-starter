@@ -154,6 +154,8 @@ function _s_scripts()
     if (is_array($pagebuilderBlocks)) {
         //* Pagebuider specific files here
     }
+
+    wp_enqueue_script('main', get_template_directory_uri() . '/main.js', [], '20151215', true);
 }
 add_action('wp_enqueue_scripts', '_s_scripts');
 
