@@ -6,5 +6,5 @@ export default (element) => {
     button.addEventListener('click', (e) => {
         i++;
         number.innerHTML = i
-    })
+    })  
 }

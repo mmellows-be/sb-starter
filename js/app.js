@@ -1,4 +1,5 @@
 import Component from './components/component';
+import listing from './components/listing';
 import _ from './utils/selector';
 
 const globalCallback = () => {
@@ -10,6 +11,10 @@ const elements = [
     {
         el: _('component'),
         component: Component
+    },
+    {
+        el: _('listing'),
+        component: listing
     }
 ]
 
